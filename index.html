@@ -1,262 +1,398 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Trust the Print — objetos 3D, produtos personalizados e criações feitas layer by layer." />
-  <title>Trust the Print</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust the Print — Trust the process. Love the build.</title>
+<meta name="description" content="A Trust the Print transforma ideias em objetos reais através de impressão 3D. Peças de desk, decoração, música, personalizadas e o teu Mini Me — feitos layer by layer em Portugal.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Trust the Print — Trust the process. Love the build.">
+<meta property="og:description" content="Objetos úteis, presentes personalizados e peças feitas layer by layer. Descobre a Trust the Print.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logos/symbol.png">
+<meta property="og:locale" content="pt_PT">
+<meta name="theme-color" content="#1B1F24">
+<link rel="canonical" href="https://trusttheprint.pages.dev/">
+<link rel="icon" type="image/png" href="assets/logos/symbol.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Schema.org Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trust the Print",
+  "slogan": "Trust the process. Love the build.",
+  "email": "trusttheprint@gmail.com",
+  "logo": "assets/logos/symbol.png"
+}
+</script>
 </head>
 <body>
-  <div id="three-bg" aria-hidden="true"></div>
-  <div class="orb orb-a"></div>
-  <div class="orb orb-b"></div>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Trust the Print">
-      <img src="assets/logo-horizontal.png" alt="Trust the Print" class="brand-logo">
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#topo" class="brand" aria-label="Trust the Print — página inicial">
+      <img src="assets/logos/symbol.png" alt="" class="brand-mark" width="40" height="40">
+      <span class="brand-word">Trust <span class="accent-teal">the</span> Print</span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Navegação principal">
-      <a href="#shop">Loja</a>
+    <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <a href="#produtos">Loja</a>
       <a href="#mini-me">Mini Me</a>
-      <a href="#como">Como funciona</a>
-      <a href="#custom">Personalizado</a>
+      <a href="#personalizado">Personalizado</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Sobre</a>
     </nav>
 
-    <a class="pill ghost" href="#shop">Ver produtos</a>
-  </header>
-
-  <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <div class="hero-badge"><span class="badge-dot"></span> IMPRESSÃO 3D, MAS COM PERSONALIDADE</div>
-        <h1>Da ideia<br>para <em>real.</em></h1>
-        <p class="hero-text">
-          Peças úteis, presentes personalizados e objetos que não parecem “só mais uma impressão 3D”.
-          Criamos tudo layer by layer.
-        </p>
-
-        <div class="hero-actions">
-          <a class="pill primary" href="#shop">Explorar produtos <span>↗</span></a>
-          <a class="pill secondary" href="#mini-me">Criar um Mini Me</a>
-        </div>
-
-        <div class="hero-tags">
-          <span>Desk Finds</span>
-          <span>Home & Decor</span>
-          <span>Personalized</span>
-          <span>Collections</span>
-        </div>
-      </div>
-
-      <div class="hero-side">
-        <div class="interaction-label">
-          <span class="mouse-icon">↖</span>
-          <div>
-            <strong>Mexe o rato.</strong>
-            <small>O símbolo reage contigo.</small>
-          </div>
-        </div>
-
-        <div class="hero-sticker sticker-a">LAYER<br>BY LAYER</div>
-        <div class="hero-sticker sticker-b">MADE<br>TO BE<br>KEPT.</div>
-      </div>
-
-      <div class="hero-bottom">
-        <img src="assets/logo-monogram.png" alt="" class="hero-mini-logo">
-        <p><strong>Trust the process.</strong> <span>Love the build.</span></p>
-      </div>
-
-      <div class="scroll-hint">desce para montar <span>↓</span></div>
-    </section>
-
-    <section id="shop" class="section light">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <p class="kicker">01 / CATEGORIAS</p>
-            <h2>Descobre a tua vibe.</h2>
-          </div>
-          <p>Uma seleção inicial da Trust the Print, organizada de forma clara mas com muita personalidade.</p>
-        </div>
-
-        <div class="cards">
-          <article class="cat-card wide teal-card">
-            <span class="n">01</span>
-            <div class="card-art">
-              <div class="art-line"></div>
-              <div class="cube c1"></div><div class="cube c2"></div><div class="cube c3"></div>
-            </div>
-            <div class="card-copy">
-              <h3>Desk Finds</h3>
-              <p>Peças para setups limpos, úteis e mais bonitos.</p>
-            </div>
-          </article>
-
-          <article class="cat-card yellow-card">
-            <span class="n">02</span>
-            <div class="vase-shape"></div>
-            <div class="card-copy">
-              <h3>Home & Decor</h3>
-              <p>Objetos que merecem ficar à vista.</p>
-            </div>
-          </article>
-
-          <article class="cat-card dark-card">
-            <span class="n">03</span>
-            <div class="mini-shape">
-              <div class="head"></div><div class="body"></div>
-            </div>
-            <div class="card-copy">
-              <h3>Personalized</h3>
-              <p>Feito para uma pessoa. E mais ninguém.</p>
-            </div>
-          </article>
-
-          <article class="cat-card coral-card">
-            <span class="n">04</span>
-            <div class="sparkles">✦ ✦ ✦</div>
-            <div class="card-copy">
-              <h3>Collections</h3>
-              <p>Coisas que gostas, tornadas reais.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark" id="destaques">
-      <div class="shell">
-        <div class="section-head inverse">
-          <div>
-            <p class="kicker">02 / DESTAQUES</p>
-            <h2>Feitos para usar.</h2>
-          </div>
-          <p>Os produtos estrela para lançar a primeira versão do website.</p>
-        </div>
-
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="prod-art cable"></div>
-            <h3>TTP Cable System</h3>
-            <p>Organização de cabos simples, clean e útil.</p>
-          </article>
-          <article class="product-card">
-            <div class="prod-art modular"></div>
-            <h3>TTP Modular Desk</h3>
-            <p>Um sistema de organização adaptável ao teu setup.</p>
-          </article>
-          <article class="product-card">
-            <div class="prod-art plant"></div>
-            <h3>Monstera Coaster Plant</h3>
-            <p>Uma peça divertida entre decoração e função.</p>
-          </article>
-          <article class="product-card featured-yellow">
-            <div class="prod-art mini"></div>
-            <h3>TTP Mini Me</h3>
-            <p>Tu, mas versão mini e cheia de personalidade.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="mini-me" class="section light">
-      <div class="shell mini-layout">
-        <div>
-          <p class="kicker">03 / TTP MINI ME</p>
-          <h2>Tu.<br><span>Mas mini.</span></h2>
-          <p class="mini-text">
-            Envia fotografias, escolhe o estilo e conta-nos o que torna essa pessoa imediatamente reconhecível.
-            Nós tratamos do resto.
-          </p>
-
-          <div class="style-toggle">
-            <button class="style-btn active" data-style="pop">POP</button>
-            <button class="style-btn" data-style="stylized">STYLIZED</button>
-          </div>
-
-          <a class="pill primary" href="#custom">Quero criar um Mini Me</a>
-        </div>
-
-        <div class="mini-stage">
-          <div class="stage-card photo-card">
-            <div class="placeholder person"></div>
-            <span>1 / TU ENVIAS AS FOTOS</span>
-          </div>
-          <div class="stage-arrow">→</div>
-          <div class="stage-card figure-card">
-            <div class="figure-preview pop" id="figure-preview">
-              <div class="f-head"></div>
-              <div class="f-hair"></div>
-              <div class="f-body"></div>
-              <div class="f-base"></div>
-            </div>
-            <span>2 / NÓS CRIAMOS A FIGURA</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="como" class="section dark">
-      <div class="shell">
-        <div class="section-head inverse">
-          <div>
-            <p class="kicker">04 / COMO FUNCIONA</p>
-            <h2>Do conceito ao objeto.</h2>
-          </div>
-          <p>Simples para o cliente. Muito mais memorável do que uma loja genérica.</p>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <span>01</span>
-            <h3>Escolhe</h3>
-            <p>Seleciona o produto, cor, tamanho ou personalização.</p>
-          </div>
-          <div class="step-line"></div>
-          <div class="step">
-            <span>02</span>
-            <h3>Nós imprimimos</h3>
-            <p>A tua peça é produzida layer by layer.</p>
-          </div>
-          <div class="step-line"></div>
-          <div class="step">
-            <span>03</span>
-            <h3>Recebes</h3>
-            <p>Preparada, embalada e pronta a usar ou oferecer.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="custom" class="section light">
-      <div class="shell cta-box">
-        <div class="cta-copy">
-          <p class="kicker">05 / PERSONALIZADO</p>
-          <h2>Tens outra ideia em mente?</h2>
-          <p>Se a imaginas, há uma boa hipótese de a conseguirmos imprimir. Fala connosco e tratamos do resto.</p>
-        </div>
-        <a class="pill primary" href="mailto:trusttheprint@gmail.com?subject=Pedido%20Personalizado">Pedir algo personalizado</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <img src="assets/logo-primary.png" alt="Trust the Print" class="footer-logo">
-    <div class="footer-links">
-      <a href="#shop">Loja</a>
-      <a href="#mini-me">Mini Me</a>
-      <a href="#como">Como funciona</a>
-      <a href="mailto:trusttheprint@gmail.com">Email</a>
+    <div class="header-actions">
+      <a href="#produtos" class="btn btn-primary btn-sm">Ver produtos</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <p>© <span id="year"></span> Trust the Print</p>
-  </footer>
+  </div>
+</header>
 
-  <script src="https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.min.js"></script>
-  <script src="script.js"></script>
+<main id="conteudo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="topo">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="dot-grid"></div>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Impressão 3D · design · Portugal</p>
+        <h1 class="hero-title">Da ideia<br><span class="accent-yellow">para real.</span></h1>
+        <p class="hero-sub">Objetos úteis, presentes personalizados e peças feitas layer by layer.</p>
+        <div class="hero-cta">
+          <a href="#produtos" class="btn btn-primary">Explorar produtos</a>
+          <a href="#mini-me" class="btn btn-ghost">Criar algo meu</a>
+        </div>
+        <p class="hero-hint">Move o rato sobre o símbolo. Ou continua a fazer scroll.</p>
+      </div>
+
+      <div class="hero-3d" id="hero3d">
+        <canvas id="heroCanvas" aria-label="Animação 3D interativa do símbolo da Trust the Print, composto por peças coloridas que se encaixam" role="img"></canvas>
+        <noscript>
+          <img src="assets/logos/symbol.png" alt="Símbolo da Trust the Print" style="width:60%;margin:auto;display:block;">
+        </noscript>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ============ CATEGORIAS ============ -->
+  <section class="section categories" id="categorias">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-dark">Explora</p>
+        <h2>Descobre a tua vibe.</h2>
+      </div>
+
+      <div class="cat-grid">
+        <a href="#produtos" class="cat-card reveal cat-deskfinds">
+          <div class="cat-glyph" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Desk Finds</h3>
+          <p>Peças para setups mais limpos, úteis e bonitos.</p>
+          <span class="cat-arrow">Ver categoria →</span>
+        </a>
+
+        <a href="#produtos" class="cat-card reveal cat-decor">
+          <div class="cat-glyph" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Home &amp; Decor</h3>
+          <p>Objetos que merecem ficar à vista.</p>
+          <span class="cat-arrow">Ver categoria →</span>
+        </a>
+
+        <a href="#mini-me" class="cat-card reveal cat-personalized">
+          <div class="cat-glyph" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Personalized</h3>
+          <p>Feito para uma pessoa. E mais ninguém.</p>
+          <span class="cat-arrow">Ver categoria →</span>
+        </a>
+
+        <a href="#produtos" class="cat-card reveal cat-music">
+          <div class="cat-glyph" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Music</h3>
+          <p>Pequenos detalhes para quem vive música.</p>
+          <span class="cat-arrow">Ver categoria →</span>
+        </a>
+
+        <a href="#produtos" class="cat-card reveal cat-collections">
+          <div class="cat-glyph" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Collections</h3>
+          <p>Coisas que gostas, tornadas reais.</p>
+          <span class="cat-arrow">Ver categoria →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUTOS EM DESTAQUE ============ -->
+  <section class="section products" id="produtos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-dark">Bestsellers</p>
+        <h2>Feitos para usar.</h2>
+      </div>
+
+      <div class="product-grid">
+
+        <article class="product-card reveal">
+          <div class="product-media ph-media ph-cable" aria-hidden="true">
+            <span class="ph-badge">Pré-visualização</span>
+            <svg viewBox="0 0 200 200" class="ph-icon"><use href="#icon-cable"></use></svg>
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Desk Finds</p>
+            <h3>TTP Cable System</h3>
+            <p class="product-desc">Kit completo para manter os cabos organizados, acessíveis e fora do caminho.</p>
+            <div class="product-foot">
+              <span class="product-price">34€</span>
+              <a class="btn btn-dark btn-sm" href="mailto:trusttheprint@gmail.com?subject=Pedido%20%E2%80%94%20TTP%20Cable%20System&body=Ol%C3%A1%20Trust%20the%20Print%2C%0A%0AGostava%20de%20fazer%20um%20pedido%20de%3A%0AProduto%3A%20TTP%20Cable%20System%0ACor%3A%20%0AQuantidade%3A%20%0A%0ANome%3A%20%0AMorada%3A%20%0ATelefone%3A%20">Adicionar ao pedido</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-media ph-media ph-desk" aria-hidden="true">
+            <span class="ph-badge">Pré-visualização</span>
+            <svg viewBox="0 0 200 200" class="ph-icon"><use href="#icon-grid"></use></svg>
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Desk Finds</p>
+            <h3>TTP Modular Desk System</h3>
+            <p class="product-desc">Cria o organizador de secretária que realmente precisas, módulo a módulo.</p>
+            <div class="product-foot">
+              <span class="product-price">desde 19€</span>
+              <a class="btn btn-dark btn-sm" href="mailto:trusttheprint@gmail.com?subject=Pedido%20%E2%80%94%20TTP%20Modular%20Desk%20System&body=Ol%C3%A1%20Trust%20the%20Print%2C%0A%0AGostava%20de%20fazer%20um%20pedido%20de%3A%0AProduto%3A%20TTP%20Modular%20Desk%20System%0AM%C3%B3dulos%20desejados%3A%20%0ACor%3A%20%0A%0ANome%3A%20%0AMorada%3A%20%0ATelefone%3A%20">Adicionar ao pedido</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-media">
+            <img src="assets/products/monstera/monstera-main.jpg" alt="Vaso Monstera da Trust the Print com folhas que servem como bases para copos" loading="lazy" width="900" height="1125">
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Home &amp; Decor</p>
+            <h3>TTP Monstera Coaster Plant</h3>
+            <p class="product-desc">Bases para copos que, guardadas, se transformam numa pequena Monstera decorativa.</p>
+            <div class="product-foot">
+              <span class="product-price">42€</span>
+              <a class="btn btn-dark btn-sm" href="mailto:trusttheprint@gmail.com?subject=Pedido%20%E2%80%94%20TTP%20Monstera%20Coaster%20Plant&body=Ol%C3%A1%20Trust%20the%20Print%2C%0A%0AGostava%20de%20fazer%20um%20pedido%20de%3A%0AProduto%3A%20TTP%20Monstera%20Coaster%20Plant%0ACor%3A%20%0AQuantidade%3A%20%0A%0ANome%3A%20%0AMorada%3A%20%0ATelefone%3A%20">Adicionar ao pedido</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-media ph-media ph-minime" aria-hidden="true">
+            <span class="ph-badge">Pré-visualização</span>
+            <svg viewBox="0 0 200 200" class="ph-icon"><use href="#icon-minime"></use></svg>
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Personalized</p>
+            <h3>TTP Mini Me</h3>
+            <p class="product-desc">A tua figura 3D, criada à tua imagem — hobbies, roupa e personalidade incluídos.</p>
+            <div class="product-foot">
+              <span class="product-price">desde 59€</span>
+              <a class="btn btn-dark btn-sm" href="#mini-me">Ver Mini Me</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MINI ME ============ -->
+  <section class="section mini-me" id="mini-me">
+    <div class="wrap">
+      <div class="minime-grid">
+
+        <div class="minime-copy reveal">
+          <p class="eyebrow">Mini Me</p>
+          <h2 class="minime-title">Tu.<br><span class="accent-coral">Mas mini.</span></h2>
+          <p class="minime-sub">Transformamos fotografias, hobbies e personalidade numa figura 3D criada especialmente para aquela pessoa.</p>
+
+          <div class="style-toggle" role="group" aria-label="Escolher estilo do Mini Me">
+            <button class="style-btn is-active" id="btnPop" type="button" aria-pressed="true">
+              <strong>POP</strong><span>cabeça grande, estilo collectible</span>
+            </button>
+            <button class="style-btn" id="btnStylized" type="button" aria-pressed="false">
+              <strong>STYLIZED</strong><span>proporções reais, mais detalhe</span>
+            </button>
+          </div>
+
+          <a href="mailto:trusttheprint@gmail.com?subject=Pedido%20Mini%20Me&body=Ol%C3%A1%20Trust%20the%20Print%2C%0A%0AQuero%20criar%20um%20Mini%20Me%3A%0AEstilo%3A%20%0ANome%20da%20pessoa%3A%20%0AProfiss%C3%A3o%20(opcional)%3A%20%0AHobbies%2Finteresses%3A%20%0ARoupa%20desejada%3A%20%0AAcess%C3%B3rio%20principal%3A%20%0AO%20que%20a%20torna%20reconhec%C3%ADvel%3A%20%0ADetalhes%20a%20n%C3%A3o%20esquecer%3A%20%0ATexto%20na%20base%20(opcional)%3A%20%0A%0A(Vou%20enviar%20as%20fotos%20em%20resposta%20a%20este%20email)%0A%0ANome%3A%20%0AEmail%3A%20%0ATelefone%3A%20" class="btn btn-primary">Começar o meu Mini Me</a>
+        </div>
+
+        <div class="minime-preview reveal" aria-hidden="true">
+          <div class="preview-stage">
+            <svg id="figurePop" class="preview-figure is-active" viewBox="0 0 200 260" role="img" aria-label="Ilustração de exemplo do estilo Pop">
+              <ellipse cx="100" cy="238" rx="46" ry="9" fill="#1B1F24" opacity=".12"/>
+              <rect x="70" y="150" width="60" height="78" rx="18" fill="#0083A6"/>
+              <rect x="52" y="160" width="20" height="52" rx="10" fill="#0083A6"/>
+              <rect x="128" y="160" width="20" height="52" rx="10" fill="#0083A6"/>
+              <circle cx="100" cy="92" r="66" fill="#FFD21A"/>
+              <circle cx="76" cy="90" r="7" fill="#1B1F24"/>
+              <circle cx="124" cy="90" r="7" fill="#1B1F24"/>
+              <path d="M78 118 Q100 132 122 118" stroke="#1B1F24" stroke-width="5" fill="none" stroke-linecap="round"/>
+            </svg>
+            <svg id="figureStylized" class="preview-figure" viewBox="0 0 200 260" role="img" aria-label="Ilustração de exemplo do estilo Stylized">
+              <ellipse cx="100" cy="248" rx="42" ry="8" fill="#1B1F24" opacity=".12"/>
+              <path d="M78 100 Q100 88 122 100 L128 235 Q100 248 72 235 Z" fill="#FF6B4A"/>
+              <rect x="84" y="150" width="14" height="80" rx="6" fill="#FF6B4A"/>
+              <rect x="102" y="150" width="14" height="80" rx="6" fill="#FF6B4A"/>
+              <circle cx="100" cy="58" r="40" fill="#1B1F24"/>
+              <circle cx="100" cy="58" r="33" fill="#F1C39A"/>
+              <circle cx="88" cy="56" r="3.5" fill="#1B1F24"/>
+              <circle cx="112" cy="56" r="3.5" fill="#1B1F24"/>
+              <path d="M90 70 Q100 76 110 70" stroke="#1B1F24" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="preview-tag" id="previewTag">Estilo POP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="minime-flow reveal">
+        <div class="flow-step"><span class="flow-icon" aria-hidden="true">📷</span><p>Fotografia</p></div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-step"><span class="flow-icon" aria-hidden="true">✨</span><p>IA &amp; criação</p></div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-step"><span class="flow-icon" aria-hidden="true">🧍</span><p>Figura</p></div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-step"><span class="flow-icon" aria-hidden="true">🖨️</span><p>Impressão</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section class="section how" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-dark">Do pedido à porta</p>
+        <h2>Como funciona.</h2>
+      </div>
+
+      <div class="how-grid">
+        <div class="how-step reveal">
+          <span class="how-num">01</span>
+          <h3>Escolhe</h3>
+          <p>Escolhe o produto, cor, tamanho ou personalização.</p>
+        </div>
+        <div class="how-path" aria-hidden="true"></div>
+        <div class="how-step reveal">
+          <span class="how-num">02</span>
+          <h3>Nós imprimimos</h3>
+          <p>Produzimos a tua peça layer by layer.</p>
+        </div>
+        <div class="how-path" aria-hidden="true"></div>
+        <div class="how-step reveal">
+          <span class="how-num">03</span>
+          <h3>Recebes</h3>
+          <p>Preparada, embalada e pronta a usar ou oferecer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOM CTA ============ -->
+  <section class="section custom-cta" id="personalizado">
+    <div class="wrap custom-inner reveal">
+      <div class="dot-grid dot-grid-light" aria-hidden="true"></div>
+      <h2>Tens outra ideia em mente?</h2>
+      <p>Se a imaginas, há uma boa hipótese de a conseguirmos imprimir.</p>
+      <a href="mailto:trusttheprint@gmail.com?subject=Nova%20ideia%20personalizada&body=Ol%C3%A1%20Trust%20the%20Print%2C%0A%0AA%20minha%20ideia%3A%20%0AMedidas%20aproximadas%3A%20%0AFinalidade%3A%20%0AOr%C3%A7amento%3A%20%0APrazo%3A%20%0AQuantidade%3A%20%0A%0ANome%3A%20%0AEmail%3A%20%0ATelefone%3A%20%0A%0A(Vou%20enviar%20refer%C3%AAncias%2Fimagens%20em%20resposta%20a%20este%20email)" class="btn btn-primary btn-lg">Enviar ideia</a>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="section about" id="sobre">
+    <div class="wrap about-inner reveal">
+      <p class="eyebrow eyebrow-dark">Sobre nós</p>
+      <p class="about-text">A Trust the Print nasceu de uma ideia simples: a impressão 3D não tem de parecer apenas impressão 3D.</p>
+      <p class="about-text">Criamos objetos úteis, presentes personalizados e peças que transformam ideias digitais em coisas que podes realmente tocar, usar ou oferecer.</p>
+      <p class="about-text about-highlight">Cada objeto começa numa ideia e ganha forma <span class="accent-teal">layer by layer.</span></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a href="#topo" class="brand">
+        <img src="assets/logos/symbol.png" alt="" class="brand-mark" width="34" height="34">
+        <span class="brand-word">Trust <span class="accent-teal">the</span> Print</span>
+      </a>
+      <p>Trust the process. <strong class="accent-coral">Love</strong> the build.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Loja">
+      <h4>Loja</h4>
+      <a href="#produtos">Desk Finds</a>
+      <a href="#produtos">Home &amp; Decor</a>
+      <a href="#produtos">Personalized</a>
+      <a href="#mini-me">Mini Me</a>
+      <a href="#produtos">Collections</a>
+    </nav>
+
+    <nav class="footer-col" aria-label="Marca">
+      <h4>Marca</h4>
+      <a href="#personalizado">Personalizado</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:trusttheprint@gmail.com">trusttheprint@gmail.com</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© <span id="year"></span> Trust the Print. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- SVG sprite (placeholders) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-cable" viewBox="0 0 200 200">
+    <path d="M40 60 Q100 20 160 60" stroke="#FFFFFF" stroke-width="9" fill="none" stroke-linecap="round" opacity=".85"/>
+    <path d="M40 100 Q100 60 160 100" stroke="#FFFFFF" stroke-width="9" fill="none" stroke-linecap="round" opacity=".6"/>
+    <path d="M40 140 Q100 100 160 140" stroke="#FFFFFF" stroke-width="9" fill="none" stroke-linecap="round" opacity=".35"/>
+    <circle cx="40" cy="60" r="8" fill="#FFFFFF"/><circle cx="160" cy="60" r="8" fill="#FFFFFF"/>
+  </symbol>
+  <symbol id="icon-grid" viewBox="0 0 200 200">
+    <rect x="30" y="30" width="55" height="55" rx="10" fill="#1B1F24"/>
+    <rect x="95" y="30" width="30" height="30" rx="8" fill="#1B1F24" opacity=".7"/>
+    <rect x="135" y="30" width="35" height="55" rx="10" fill="#1B1F24" opacity=".5"/>
+    <rect x="30" y="95" width="30" height="75" rx="8" fill="#1B1F24" opacity=".6"/>
+    <rect x="70" y="115" width="45" height="55" rx="10" fill="#1B1F24"/>
+    <rect x="125" y="95" width="45" height="35" rx="8" fill="#1B1F24" opacity=".8"/>
+  </symbol>
+  <symbol id="icon-minime" viewBox="0 0 200 200">
+    <circle cx="100" cy="70" r="42" fill="#1B1F24"/>
+    <rect x="62" y="118" width="76" height="66" rx="20" fill="#1B1F24" opacity=".85"/>
+  </symbol>
+</svg>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
