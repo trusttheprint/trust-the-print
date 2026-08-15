@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produto — Trust the Print</title>
+<meta name="description" content="Produto Trust the Print.">
+<link rel="icon" type="image/png" href="assets/logos/symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+<header class="site-header is-scrolled" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand" aria-label="Trust the Print — página inicial">
+      <img src="assets/logos/symbol.png" alt="" class="brand-mark" width="40" height="40">
+      <span class="brand-word">Trust <span class="accent-teal">the</span> Print</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <a href="shop.html">Loja</a>
+      <a href="mini-me.html">Mini Me</a>
+      <a href="index.html#personalizado">Personalizado</a>
+      <a href="index.html#como-funciona">Como funciona</a>
+      <a href="index.html#sobre">Sobre</a>
+    </nav>
+    <div class="header-actions">
+      <a href="shop.html" class="btn btn-primary btn-sm">Ver produtos</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo" class="product-page">
+  <div class="wrap">
+    <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
+
+    <div class="product-layout" id="productLayout">
+      <section class="product-gallery">
+        <div class="product-main-media" id="mainMedia"></div>
+        <div class="product-thumbs" id="thumbs"></div>
+      </section>
+
+      <section class="product-info">
+        <p class="product-category-label" id="productCategory"></p>
+        <h1 class="product-title" id="productName"></h1>
+        <p class="product-description" id="productDescription"></p>
+        <div class="product-price-big" id="productPrice"></div>
+
+        <div id="productOptions"></div>
+
+        <div class="option-group">
+          <div class="option-label"><span>Quantidade</span></div>
+          <div class="qty-row">
+            <div class="qty-control" aria-label="Quantidade">
+              <button type="button" id="qtyMinus" aria-label="Diminuir quantidade">−</button>
+              <span id="qtyValue">1</span>
+              <button type="button" id="qtyPlus" aria-label="Aumentar quantidade">+</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg product-cta" id="orderBtn" type="button">Fazer pedido</button>
+        <p class="product-note">Nesta primeira versão da loja, o botão prepara todos os detalhes da encomenda e abre o teu cliente de email. Nenhum pagamento é efetuado automaticamente.</p>
+
+        <div class="product-features">
+          <div class="feature-chip"><strong>Feito por encomenda</strong>Produção 3D layer by layer.</div>
+          <div class="feature-chip"><strong>Escolhe a tua versão</strong>Cores, tamanhos e opções quando disponíveis.</div>
+          <div class="feature-chip"><strong>Portugal</strong>Preparado localmente pela Trust the Print.</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+  <div class="order-dialog">
+    <div class="order-head">
+      <div><p class="eyebrow eyebrow-dark">Encomenda</p><h2 id="orderTitle">Confirmar detalhes</h2></div>
+      <button class="modal-close" id="modalClose" type="button" aria-label="Fechar">×</button>
+    </div>
+    <div class="order-summary" id="orderSummary"></div>
+    <form id="orderForm">
+      <div class="form-grid">
+        <div class="form-field"><label for="customerName">Nome *</label><input id="customerName" required autocomplete="name"></div>
+        <div class="form-field"><label for="customerEmail">Email *</label><input id="customerEmail" type="email" required autocomplete="email"></div>
+        <div class="form-field"><label for="customerPhone">Telefone</label><input id="customerPhone" autocomplete="tel"></div>
+        <div class="form-field"><label for="customerCity">Localidade</label><input id="customerCity" autocomplete="address-level2"></div>
+        <div class="form-field full"><label for="customerNotes">Observações</label><textarea id="customerNotes" placeholder="Há alguma coisa que devamos saber?"></textarea></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-dark" type="button" id="copyOrderBtn">Copiar detalhes</button>
+        <button class="btn btn-primary" type="submit">Abrir email da encomenda</button>
+      </div>
+      <p class="form-help">O formulário não envia nada sozinho: ao confirmar, abre uma mensagem dirigida a trusttheprint@gmail.com com os dados já preenchidos. Revê-a e envia-a através da tua aplicação de email.</p>
+    </form>
+  </div>
+</div>
+
+<script src="products.js"></script>
+<script src="product.js"></script>
+</body>
+</html>

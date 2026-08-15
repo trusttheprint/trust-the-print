@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loja — Trust the Print</title>
+<meta name="description" content="Descobre os produtos Trust the Print: Desk Finds, Home & Decor, personalizados e muito mais.">
+<link rel="icon" type="image/png" href="assets/logos/symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+<header class="site-header is-scrolled" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand" aria-label="Trust the Print — página inicial">
+      <img src="assets/logos/symbol.png" alt="" class="brand-mark" width="40" height="40">
+      <span class="brand-word">Trust <span class="accent-teal">the</span> Print</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <a href="shop.html" aria-current="page">Loja</a>
+      <a href="mini-me.html">Mini Me</a>
+      <a href="index.html#personalizado">Personalizado</a>
+      <a href="index.html#como-funciona">Como funciona</a>
+      <a href="index.html#sobre">Sobre</a>
+    </nav>
+    <div class="header-actions">
+      <a href="shop.html" class="btn btn-primary btn-sm">Ver produtos</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="shop-hero">
+    <div class="wrap shop-hero-grid">
+      <div class="reveal">
+        <p class="eyebrow">A loja</p>
+        <h1 class="shop-title">Encontra a tua próxima <span class="accent">print.</span></h1>
+        <p class="shop-lead">Peças úteis, objetos para casa, presentes personalizados e pequenas coisas que tornam o dia a dia mais interessante.</p>
+      </div>
+      <img src="assets/logos/symbol.png" alt="" class="shop-mark reveal">
+    </div>
+  </section>
+
+  <section class="shop-main">
+    <div class="wrap">
+      <div class="filter-row" id="filters" aria-label="Filtrar produtos por categoria"></div>
+      <div class="shop-grid" id="shopGrid" aria-live="polite"></div>
+
+      <div class="collections-banner reveal" id="collectionsBanner">
+        <div>
+          <p class="eyebrow">Collections</p>
+          <h3>Universos que gostas, tornados reais.</h3>
+          <p>A área Collections está preparada para receber peças temáticas. Os produtos são publicados individualmente quando as respetivas condições de comercialização e licença estiverem confirmadas.</p>
+        </div>
+        <span class="btn btn-primary">Em preparação</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logos/symbol.png" alt="" width="42" height="42">
+      <p class="footer-word">Trust <span class="accent-teal">the</span> Print</p>
+      <p class="footer-tag">Trust the process. <span class="accent-coral">Love</span> the build.</p>
+    </div>
+    <div class="footer-col"><h4>Explorar</h4><a href="shop.html">Loja</a><a href="mini-me.html">Mini Me</a><a href="index.html#personalizado">Personalizado</a></div>
+    <div class="footer-col"><h4>Trust the Print</h4><a href="index.html#como-funciona">Como funciona</a><a href="index.html#sobre">Sobre</a><a href="mailto:trusttheprint@gmail.com">Contacto</a></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© <span id="year"></span> Trust the Print</span><span>Feito layer by layer.</span></div>
+</footer>
+
+<script src="products.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>
