@@ -13,96 +13,195 @@
   });
 
   if (!window.THREE) return;
+
   const mount = document.getElementById('three-bg');
-
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
-  camera.position.set(0, 0.2, 10.5);
+  const camera = new THREE.PerspectiveCamera(38, innerWidth / innerHeight, 0.1, 100);
+  camera.position.set(0, 0.1, 11);
 
-  const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  const renderer = new THREE.WebGLRenderer({
+    antialias:true,
+    alpha:true,
+    powerPreference:'high-performance'
+  });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.8));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setClearColor(0x000000, 0);
   mount.appendChild(renderer.domElement);
 
-  const group = new THREE.Group();
-  scene.add(group);
+  const world = new THREE.Group();
+  scene.add(world);
 
-  const COLORS = [0xFFD21A, 0x0083A6, 0xFF6B4A, 0xFFFFFF];
-  const layers = [];
-  const total = 24;
+  // Official logo recreated in 3D:
+  // yellow L + three teal blocks + one coral block.
+  const palette = {
+    yellow:0xFFD21A,
+    teal:0x0083A6,
+    coral:0xFF6B4A,
+    graphite:0x1B1F24
+  };
 
-  for (let i=0; i<total; i++) {
-    const size = 2.6 - i * 0.07;
-    const geo = new THREE.BoxGeometry(size, 0.12, size * 0.72);
-    const mat = new THREE.MeshStandardMaterial({
-      color: COLORS[i % COLORS.length],
-      roughness: 0.28,
-      metalness: 0.08,
-      transparent: true,
-      opacity: 0.94
+  function mat(color){
+    return new THREE.MeshStandardMaterial({
+      color,
+      roughness:.28,
+      metalness:.08
     });
-    const mesh = new THREE.Mesh(geo, mat);
-    mesh.position.y = (i - total/2) * 0.11;
-    mesh.rotation.x = 0.35;
-    mesh.rotation.y = i * 0.08;
-    mesh.rotation.z = i * 0.03;
-    group.add(mesh);
-    layers.push(mesh);
   }
 
-  const ringGeo = new THREE.TorusGeometry(2.45, 0.05, 12, 120);
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0x0083A6, transparent:true, opacity:0.28 });
-  const ring1 = new THREE.Mesh(ringGeo, ringMat); ring1.rotation.x = Math.PI / 2.2; group.add(ring1);
-  const ring2 = new THREE.Mesh(ringGeo, ringMat.clone()); ring2.scale.setScalar(0.76); ring2.rotation.set(Math.PI/2.6, 0.4, 0.2); group.add(ring2);
+  function box(w,h,d,color,x,y,z=0){
+    const geo = new THREE.BoxGeometry(w,h,d);
+    const mesh = new THREE.Mesh(geo, mat(color));
+    mesh.position.set(x,y,z);
+    mesh.userData.home = new THREE.Vector3(x,y,z);
+    world.add(mesh);
+    return mesh;
+  }
 
-  const ambient = new THREE.AmbientLight(0xffffff, 1.8); scene.add(ambient);
-  const key = new THREE.DirectionalLight(0xffffff, 2.8); key.position.set(4,6,5); scene.add(key);
-  const warm = new THREE.PointLight(0xFFD21A, 18, 18); warm.position.set(-2,-2,5); scene.add(warm);
-  const coral = new THREE.PointLight(0xFF6B4A, 10, 16); coral.position.set(4,1,4); scene.add(coral);
+  const parts = [];
 
-  const mouse = {x:0, y:0};
-  const smooth = {x:0, y:0};
+  // The "L" is built out of two chunky blocks so it reads clearly in 3D.
+  parts.push(box(2.45,.72,.72,palette.yellow, .15, 1.55));
+  parts.push(box(.72,2.45,.72,palette.yellow,-.72,.68));
 
-  group.position.set(window.innerWidth > 900 ? 2.8 : 0, 0.3, 0);
+  // Official small squares
+  parts.push(box(.86,.86,.72,palette.teal, 1.75, 1.50));
+  parts.push(box(.86,.86,.72,palette.teal, .56, .30));
+  parts.push(box(.86,.86,.72,palette.teal,-.72,-.88));
+  parts.push(box(.86,.86,.72,palette.coral, 1.56,-.88));
 
-  window.addEventListener('pointermove', (e) => {
-    mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
-    mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
+  // Fine "print layers" behind the symbol
+  const layerGroup = new THREE.Group();
+  world.add(layerGroup);
+  const layerMat = new THREE.MeshBasicMaterial({
+    color:palette.teal, transparent:true, opacity:.20
+  });
+  for(let i=0;i<18;i++){
+    const geo = new THREE.TorusGeometry(2.65 + i*.055, .018, 6, 90);
+    const ring = new THREE.Mesh(geo, layerMat.clone());
+    ring.rotation.x = Math.PI/2.25;
+    ring.rotation.z = i*.055;
+    ring.position.z = -1.25 - i*.035;
+    ring.material.opacity = .22 - i*.007;
+    layerGroup.add(ring);
+  }
+
+  // Little floating brand particles
+  const particleGroup = new THREE.Group();
+  world.add(particleGroup);
+  const particleColors = [palette.yellow,palette.teal,palette.coral];
+  for(let i=0;i<18;i++){
+    const s = .08 + Math.random()*.13;
+    const p = new THREE.Mesh(
+      new THREE.BoxGeometry(s,s,s),
+      new THREE.MeshStandardMaterial({color:particleColors[i%3],roughness:.35})
+    );
+    const a = Math.random()*Math.PI*2;
+    const r = 3.3 + Math.random()*1.7;
+    p.position.set(Math.cos(a)*r, Math.sin(a)*r*.65, (Math.random()-.5)*2);
+    p.userData.phase = Math.random()*Math.PI*2;
+    particleGroup.add(p);
+  }
+
+  const ambient = new THREE.AmbientLight(0xffffff, 2.2);
+  scene.add(ambient);
+  const key = new THREE.DirectionalLight(0xffffff, 3.8);
+  key.position.set(4,5,8);
+  scene.add(key);
+  const tealLight = new THREE.PointLight(palette.teal, 15, 18);
+  tealLight.position.set(-4,1,5);
+  scene.add(tealLight);
+  const yellowLight = new THREE.PointLight(palette.yellow, 14, 16);
+  yellowLight.position.set(3,-3,5);
+  scene.add(yellowLight);
+  const coralLight = new THREE.PointLight(palette.coral, 8, 14);
+  coralLight.position.set(5,2,1);
+  scene.add(coralLight);
+
+  world.position.set(innerWidth > 980 ? 3.0 : 0, .2, 0);
+  world.rotation.set(-.12,-.18,.06);
+  world.scale.setScalar(.92);
+
+  // Start scattered, then assemble into the brand symbol.
+  parts.forEach((mesh,i) => {
+    mesh.userData.start = mesh.userData.home.clone().add(new THREE.Vector3(
+      (Math.random()-.5)*9,
+      (Math.random()-.5)*7,
+      (Math.random()-.5)*5
+    ));
+    mesh.position.copy(mesh.userData.start);
+    mesh.rotation.set(
+      (Math.random()-.5)*2.2,
+      (Math.random()-.5)*2.2,
+      (Math.random()-.5)*2.2
+    );
+    mesh.userData.delay = i*.075;
+  });
+
+  const pointer = {x:0,y:0};
+  const smooth = {x:0,y:0};
+  addEventListener('pointermove', e => {
+    pointer.x = (e.clientX/innerWidth-.5)*2;
+    pointer.y = (e.clientY/innerHeight-.5)*2;
   }, {passive:true});
 
   function resize(){
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = innerWidth/innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    group.position.x = window.innerWidth > 900 ? 2.8 : 0;
+    renderer.setPixelRatio(Math.min(devicePixelRatio,1.8));
+    renderer.setSize(innerWidth,innerHeight);
+    world.position.x = innerWidth > 980 ? 3.0 : 0;
   }
-  window.addEventListener('resize', resize);
+  addEventListener('resize',resize);
 
   const clock = new THREE.Clock();
+
+  function easeOutBack(x){
+    const c1=1.70158, c3=c1+1;
+    return 1 + c3*Math.pow(x-1,3) + c1*Math.pow(x-1,2);
+  }
+
   function animate(){
     const t = clock.getElapsedTime();
-    const scroll = Math.min(window.scrollY / Math.max(window.innerHeight,1), 2.5);
+    const scroll = Math.min(scrollY/Math.max(innerHeight,1),2.2);
 
-    smooth.x += (mouse.x - smooth.x) * 0.04;
-    smooth.y += (mouse.y - smooth.y) * 0.04;
+    smooth.x += (pointer.x-smooth.x)*.04;
+    smooth.y += (pointer.y-smooth.y)*.04;
 
-    group.rotation.y += ((smooth.x * 0.35) - group.rotation.y) * 0.04;
-    group.rotation.x += ((0.12 - smooth.y * 0.16) - group.rotation.x) * 0.04;
-    group.rotation.z = Math.sin(t * 0.45) * 0.08;
+    // assemble during first ~1.4s
+    parts.forEach((mesh,i) => {
+      const local = Math.max(0,Math.min(1,(t-.12-mesh.userData.delay)/1.05));
+      const k = easeOutBack(local);
 
-    layers.forEach((mesh, i) => {
-      const offset = (i - total/2) * 0.11;
-      const spread = (i - total/2) * 0.035 * (0.4 + Math.sin(t * 0.8 + i * 0.2));
-      mesh.position.y += ((offset + spread + scroll * 0.05) - mesh.position.y) * 0.06;
-      mesh.rotation.y += 0.0025;
+      // on scroll the official logo separates back into "print layers"
+      const explode = Math.min(scroll,1.15);
+      const dir = mesh.userData.home.clone().normalize().multiplyScalar(explode*.65);
+
+      const target = mesh.userData.start.clone().lerp(mesh.userData.home,k).add(dir);
+      mesh.position.lerp(target,.16);
+
+      mesh.rotation.x += (0 - mesh.rotation.x)*.10;
+      mesh.rotation.y += (0 - mesh.rotation.y)*.10;
+      mesh.rotation.z += (0 - mesh.rotation.z)*.10;
     });
 
-    ring1.rotation.z += 0.003;
-    ring2.rotation.z -= 0.0025;
+    world.rotation.y += ((-.18 + smooth.x*.28) - world.rotation.y)*.045;
+    world.rotation.x += ((-.12 - smooth.y*.13) - world.rotation.x)*.045;
+    world.rotation.z = .06 + Math.sin(t*.55)*.025;
 
-    renderer.domElement.style.opacity = String(Math.max(0.18, 1 - scroll * 0.22));
-    renderer.render(scene, camera);
+    layerGroup.rotation.z += .0015;
+    layerGroup.rotation.y = Math.sin(t*.35)*.10;
+
+    particleGroup.children.forEach((p,i) => {
+      p.rotation.x += .006;
+      p.rotation.y += .008;
+      p.position.y += Math.sin(t*1.1 + p.userData.phase)*.0018;
+    });
+
+    // Keep the effect very visible in the hero; fade gradually after it.
+    renderer.domElement.style.opacity = String(Math.max(.16, 1-scroll*.33));
+
+    renderer.render(scene,camera);
     requestAnimationFrame(animate);
   }
   animate();
